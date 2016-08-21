@@ -41,6 +41,11 @@ post '/compile' do
 
   src = params[:s]
   key = params[:key]
+
+  if key!="swest" then
+    return "Error"
+  end
+
   filename = "/tmp/" + SecureRandom.uuid
   File.open("#{filename}.rb", "w") do |file|
     file.write(src)
